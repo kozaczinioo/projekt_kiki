@@ -1,15 +1,17 @@
 .navbar{
   justify-content: flex-end;
-  background-color:transparent;
+  //background-color:transparent;
   //background-color:hsla(0, 0%, 100%, 0.3) ;
+  background-color: #62585631;
   position: fixed;
   //font-size: 1.7rem;
-  font-weight: 700;
+  //font-weight: 700;
   text-transform: uppercase;
   font-size: 1.6rem;
-
+  padding-right: 3rem;
+  color: white;
 }
 span {
-  padding-right: 1rem;
+  padding-right: 2rem;
   letter-spacing: .05em;
 }

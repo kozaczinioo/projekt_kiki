@@ -7,12 +7,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from "@angular/material";
 import { HeroComponent } from './hero/hero.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    HeroComponent
+    HeroComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
