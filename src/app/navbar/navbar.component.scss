@@ -1,8 +1,15 @@
 .navbar{
   justify-content: flex-end;
   background-color:transparent;
+  //background-color:hsla(0, 0%, 100%, 0.3) ;
   position: fixed;
+  //font-size: 1.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+
 }
 span {
   padding-right: 1rem;
+  letter-spacing: .05em;
 }
