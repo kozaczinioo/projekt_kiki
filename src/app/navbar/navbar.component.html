@@ -3,6 +3,14 @@
   <span>ogłoszenia</span>
   <span>o nas</span>
   <span>kontakt</span>
-  <span><img src="https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-poland2x.png" alt=""></span>
+  <!-- <span><img src="https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-poland2x.png" alt=""></span> -->
+  <span>
+      <button mat-button class="lang" [matMenuTriggerFor]="menu"><img src="https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-poland2x.png" alt=""></button>
+      <mat-menu  #menu="matMenu">
+        <button mat-menu-item ><img src="https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-russia2x.png" alt=""></button>
+        <button mat-menu-item><img src="https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-united-kingdom2x.png" alt=""></button>
+        <button mat-menu-item><img src="https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-germany2x.png" alt=""></button>
+      </mat-menu>
+</span>
 </div>
 </mat-toolbar>
