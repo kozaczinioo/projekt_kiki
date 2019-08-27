@@ -1,0 +1,11 @@
+<h1>Wyróżnione oferty</h1>
+<ul *ngFor="let product of products">
+  <mat-card class="example-car">
+  <mat-card-title>{{product.name}}</mat-card-title>
+  <mat-card-subtitle>{{product.make}}</mat-card-subtitle>
+      <img mat-card-image src="{{product.url}}">
+      <mat-card-content>{{product.prize}}PLN</mat-card-content>
+      <mat-card-content>{{product.mileage}}km | {{product.year}}</mat-card-content>
+    </mat-card>
+</ul>
+
