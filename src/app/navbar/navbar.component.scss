@@ -19,3 +19,11 @@ span {
 .lang{
   background-color: transparent !important;
 }
+a{ text-decoration: none;
+  color: inherit;}
+a:hover{
+  background-color: #6258567e;
+  color: goldenrod;
+  opacity: 0.4;
+  transition: 0.3s;
+}

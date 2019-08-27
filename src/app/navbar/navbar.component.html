@@ -1,8 +1,8 @@
 <mat-toolbar class="navbar">
 <div>
-  <span>ogłoszenia</span>
-  <span>o nas</span>
-  <span>kontakt</span>
+  <span><a [routerLink]="['/ogloszenia']" routerLinkActive="router-link-active">ogłoszenia</a></span>
+  <span><a [routerLink]="['/onas']" routerLinkActive="router-link-active">o nas</a> </span>
+  <span><a [routerLink]="['/kontakt']" routerLinkActive="router-link-active">kontakt</a></span>
   <!-- <span><img src="https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-poland2x.png" alt=""></span> -->
   <span>
       <button mat-button class="lang" [matMenuTriggerFor]="menu"><img src="https://cdn3.iconfinder.com/data/icons/142-mini-country-flags-16x16px/32/flag-poland2x.png" alt=""></button>
