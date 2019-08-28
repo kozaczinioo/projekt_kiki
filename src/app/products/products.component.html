@@ -9,6 +9,6 @@
       <mat-card-content>{{product.mileage}}km | {{product.year}}</mat-card-content>
     </mat-card>
 </ul>
-<button mat-stroked-button>Pozostałe ogłoszenia</button>
+<button mat-stroked-button [routerLink]="['/ogloszenia']" routerLinkActive="router-link-active">Pozostałe ogłoszenia</button>
 </div>
 

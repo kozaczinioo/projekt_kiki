@@ -38,7 +38,7 @@ import { OnasComponent } from './onas/onas.component';
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'ogloszenia', component: OgloszeniaComponent},
-      {path: 'onas',component: OnasComponent},
+      {path: 'onas', component: OnasComponent},
       {path: 'kontakt', component: KontaktComponent},
     ]),
   ],
