@@ -1,14 +1,15 @@
 .main{
   background-image: url("Screenshot.png");
-  height: 80%;
+  height: 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+background-position-y: -170px;
   //opacity: 0.5;
 }
 .mainb{
-  background-image: url("Screenshot.png");
+  background-image: url("https://thumbs.img-sprzedajemy.pl/1000x901c/33/ac/da/przyczepa-rolnicza-dwuosiowa-t6532-6t-pronar-przyczepy-rolnicze-zawiercie-504425653.jpg");
   height: 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -16,7 +17,7 @@
   background-size: cover;
 }
 .content{
-  height: 80%;
+  height: 50%;
   //background: rgb(255, 255, 255);
   background:#7f7f7f;
   background:rgba(255,255,255,0.5);

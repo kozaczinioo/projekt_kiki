@@ -1,6 +1,6 @@
 <div>
 <h1>Wyróżnione oferty</h1>
-<ul *ngFor="let product of products">
+<div *ngFor="let product of products"> <!-- div insted of ul on puropse, mobile divices didn't liked those -->
   <mat-card class="example-car">
   <mat-card-title>{{product.name}}</mat-card-title>
   <mat-card-subtitle>{{product.make}}</mat-card-subtitle>
@@ -8,7 +8,7 @@
       <mat-card-content>{{product.prize}}PLN</mat-card-content>
       <mat-card-content>{{product.mileage}}km | {{product.year}}</mat-card-content>
     </mat-card>
-</ul>
+</div>
 <button mat-stroked-button [routerLink]="['/ogloszenia']" routerLinkActive="router-link-active">Pozostałe ogłoszenia</button>
 </div>
 

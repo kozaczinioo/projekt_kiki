@@ -1,9 +1,12 @@
 .example-car {
   max-width: 80%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   width: 50%;
+  margin: 0 auto;
+  justify-items: center;
+  margin-bottom: 2%;
 }
 h1{
   text-align: center;
@@ -17,5 +20,6 @@ button{
   font-size: 16px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2%;
   background-color: crimson;
 }
