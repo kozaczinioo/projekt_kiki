@@ -1,0 +1,47 @@
+.empty{
+  height: 10%;
+}
+.photos{
+  height: 70%;
+  width: 70vw;
+  margin: 0 auto;
+  //margin: 30%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+}
+
+.params{
+  border-top: 1px solid #423b3a;
+  height: 30%;
+  width: 70vw;
+  margin: 0 auto;
+  //margin: 30%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.description{
+  border-top: 1px solid #423b3a;
+  height: 30%;
+  width: 70vw;
+  margin: 0 auto;
+  //margin: 30%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.atributes_list{
+  margin: 0 -15px;
+  ///list-style: none;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2.5vw;
+  align-content: center;
+
+
+}
+
+.params::before{
+  background-color: yellowgreen;
+
+}
