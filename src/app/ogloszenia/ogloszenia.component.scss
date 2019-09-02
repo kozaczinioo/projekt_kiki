@@ -2,12 +2,14 @@
   height: 10%;
 }
 .photos{
-  height: 70%;
+  //height: 70%;
   width: 70vw;
   margin: 0 auto;
   //margin: 30%;
   padding-top: 5%;
   padding-bottom: 5%;
+  display: flex;
+  justify-content: center;
 
 }
 
