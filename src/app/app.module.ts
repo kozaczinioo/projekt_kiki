@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { OgloszeniaComponent } from './ogloszenia/ogloszenia.component';
 import { OnasComponent } from './onas/onas.component';
+import { NgxGalleryModule } from 'ngx-gallery';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { OnasComponent } from './onas/onas.component';
     MatMenuModule,
     MatCardModule,
     MatButtonModule,
+    NgxGalleryModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'ogloszenia', component: OgloszeniaComponent},
