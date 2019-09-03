@@ -15,6 +15,8 @@ import { KontaktComponent } from './kontakt/kontakt.component';
 import { OgloszeniaComponent } from './ogloszenia/ogloszenia.component';
 import { OnasComponent } from './onas/onas.component';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { AProductsComponent } from './admin/a-products/a-products.component';
+import { ANewproductComponent } from './admin/a-newproduct/a-newproduct.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { NgxGalleryModule } from 'ngx-gallery';
     HomeComponent,
     KontaktComponent,
     OgloszeniaComponent,
-    OnasComponent
+    OnasComponent,
+    AProductsComponent,
+    ANewproductComponent
   ],
   imports: [
     BrowserModule,

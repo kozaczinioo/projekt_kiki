@@ -8,6 +8,8 @@ import { NgxGalleryOptions, NgxGalleryImage } from 'ngx-gallery';
 })
 export class OgloszeniaComponent implements OnInit {
 
+  opis_a = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus ligula porttitor congue egestas. Aenean fringilla et arcu eu rhoncus. In aliquet risus turpis, vel ullamcorper magna venenatis in. Nullam nibh ipsum, maximus quis ultrices ut, scelerisque eu elit. Aliquam sit amet sapien at dui varius tincidunt.";
+  opis_b = "Donec gravida iaculis massa, volutpat pharetra augue fringilla vitae. Nullam neque sem, dictum vel malesuada ac, luctus non metus. Sed a tellus consectetur est finibus malesuada. Vivamus dignissim ante erat, vel iaculis leo sagittis non. Sed id ligula non quam consectetur interdum. Donec pretium felis in pulvinar aliquam. Nullam venenatis condimentum ipsum, eu porta diam porttitor et. ";
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
