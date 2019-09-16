@@ -1,7 +1,7 @@
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -17,6 +17,9 @@ import { OnasComponent } from './onas/onas.component';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { AProductsComponent } from './admin/a-products/a-products.component';
 import { ANewproductComponent } from './admin/a-newproduct/a-newproduct.component';
+import { LoginComponent } from './admin/login/login.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { ANewproductComponent } from './admin/a-newproduct/a-newproduct.componen
     OgloszeniaComponent,
     OnasComponent,
     AProductsComponent,
-    ANewproductComponent
+    ANewproductComponent,
+    LoginComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -42,14 +48,20 @@ import { ANewproductComponent } from './admin/a-newproduct/a-newproduct.componen
     MatCardModule,
     MatButtonModule,
     NgxGalleryModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'ogloszenia', component: OgloszeniaComponent},
       {path: 'onas', component: OnasComponent},
       {path: 'kontakt', component: KontaktComponent},
+      {path: 'nowy',  component: ANewproductComponent},
+      {path: 'admin', component: AProductsComponent},
+      {path: 'login', component: LoginComponent},
     ]),
   ],
-  providers: [],
+  providers: [AngularFireAuthModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
