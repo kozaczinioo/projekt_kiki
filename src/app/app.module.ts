@@ -1,3 +1,4 @@
+import { AuthGuardService } from './auth-guard.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -57,12 +58,14 @@ import { AuthService } from './auth.service';
       {path: 'ogloszenia', component: OgloszeniaComponent},
       {path: 'onas', component: OnasComponent},
       {path: 'kontakt', component: KontaktComponent},
-      {path: 'nowy',  component: ANewproductComponent},
+      {path: 'nowy',  component: ANewproductComponent, canActivate: [AuthGuardService]},
       {path: 'admin', component: AProductsComponent},
       {path: 'login', component: LoginComponent},
     ]),
   ],
-  providers: [AngularFireAuthModule, AuthService],
+  providers: [AngularFireAuthModule,
+              AuthService,
+              AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
