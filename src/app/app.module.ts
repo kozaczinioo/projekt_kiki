@@ -20,6 +20,7 @@ import { ANewproductComponent } from './admin/a-newproduct/a-newproduct.componen
 import { LoginComponent } from './admin/login/login.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -61,7 +62,7 @@ import { AngularFireModule } from '@angular/fire';
       {path: 'login', component: LoginComponent},
     ]),
   ],
-  providers: [AngularFireAuthModule],
+  providers: [AngularFireAuthModule, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

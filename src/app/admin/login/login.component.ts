@@ -1,8 +1,10 @@
+import { AuthService } from './../../auth.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Component } from '@angular/core';
 import { auth } from 'firebase/app';
 import * as firebase from 'firebase/app';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { FirebaseAuth } from '@angular/fire';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +14,12 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 export class LoginComponent {
 
-  constructor(public afAuth: AngularFireAuth) {
+
+  constructor(public auth: AuthService) {
   }
+
   login() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-  }
-  logout() {
-    this.afAuth.auth.signOut();
+    this.auth.login();
   }
 
 }
