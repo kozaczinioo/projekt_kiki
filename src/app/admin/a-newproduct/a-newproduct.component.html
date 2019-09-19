@@ -1,1 +1,56 @@
-<p>a-newproduct works!</p>
+<div class="empty"></div>
+<div class="main">
+  <form class="form">
+  <mat-form-field>
+  <mat-label>Rodzaj</mat-label>
+   <select matNativeControl required>
+    <option value="cięzarowy">ciezarowy</option>
+    <option value="osobowy">osobowy</option>
+    <option value="kontener">kontener</option>
+    <option value="cosjeszcze">cosjeszcze</option>
+  </select>
+  </mat-form-field>
+  <mat-form-field>
+  <mat-label>Marka</mat-label>
+      <select matNativeControl required>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </mat-form-field>
+    <div class="helper"></div>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Model">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+     <input matInput placeholder="Rocznik">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="przebieg">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Paliwo</mat-label>
+            <select matNativeControl required>
+              <option value="volvo">Diesel</option>
+              <option value="saab">Benzyna</option>
+              <option value="saab">Benzyna+lpg</option>
+              <option value="saab">Benzyna+lpg</option>
+            </select>
+          </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput placeholder="kolor">
+    </mat-form-field>
+
+    <mat-radio-group>
+        <label id="uszkodzony">uszkodzony </label>
+        <br><br>
+        <mat-radio-button value="tak">tak</mat-radio-button>
+        <mat-radio-button value="nie">nie</mat-radio-button>
+      </mat-radio-group>
+
+    <mat-form-field class="full-width">
+        <textarea matInput placeholder="opis"></textarea>
+      </mat-form-field>
+  </form>
+</div>

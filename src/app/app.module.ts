@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatMenuModule, MatCardModule, MatButtonModule} from '@angular/material';
+import { MatToolbarModule, MatMenuModule, MatCardModule, MatButtonModule, MatFormField, MatFormFieldModule} from '@angular/material';
 import { HeroComponent } from './hero/hero.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
@@ -22,7 +22,8 @@ import { LoginComponent } from './admin/login/login.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AuthService } from './auth.service';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,9 @@ import { AuthService } from './auth.service';
     MatCardModule,
     MatButtonModule,
     NgxGalleryModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatRadioModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
 
