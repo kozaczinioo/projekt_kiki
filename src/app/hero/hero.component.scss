@@ -4,7 +4,7 @@
 }
 .hero-image {
 /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://picsum.photos/id/1072/3872/2592");
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("https://firebasestorage.googleapis.com/v0/b/kiki-c7b28.appspot.com/o/201909-komis-4.jpg?alt=media&token=8535d2fd-32be-4a30-be0d-aa3a627d7906");
 
 /* Set a specific height */
 height: 90%;
@@ -26,7 +26,7 @@ left: 50%;
 transform: translate(-50%, -50%);
 color: white;
 margin: 0 0 6rem;
-font-size: 4.2vw;
+font-size: 2.2vw;
 //max-width: 100rem;
 
 }

@@ -1,7 +1,7 @@
 <div>
 <h1>Wyróżnione oferty</h1>
 <div *ngFor="let product of products"> <!-- div insted of ul on puropse, mobile divices didn't liked those -->
-  <mat-card class="example-car">
+  <mat-card (click)="goto()" class="example-car">
   <mat-card-title>{{product.name}}</mat-card-title>
   <mat-card-subtitle>{{product.make}}</mat-card-subtitle>
       <img mat-card-image src="{{product.url}}">

@@ -12,6 +12,12 @@
   color: white;
   z-index: 1;
 }
+@media only screen and (max-device-width: 1366px)
+{
+.navbar{
+ // display: none;
+}
+}
 span {
   padding-right: 2vw;
   letter-spacing: .05em;
@@ -30,6 +36,6 @@ a:hover{
 .logo>img{
   padding-top: 3%;
   width: 20%;
-  height: 20%;
+  //height: 20%;
   z-index: 2;
 }

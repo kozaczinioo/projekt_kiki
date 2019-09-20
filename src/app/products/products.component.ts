@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -14,12 +15,15 @@ export class ProductsComponent implements OnInit {
      url: 'https://www.trucksnl.com/TruckPics/size5/4952114_1.jpg'},
     {id: 3, name: 'Volvo', make: 'FH 640', prize: 40000, year: 2010, mileage: 400000,
      url: 'https://arrowtruck-cdn.azureedge.net/6d0440ea-0578-439e-b30a-e6a3017f1469/DSC03488.JPG'},
-
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+  goto() {
+    console.log("click");
+    this.router.navigateByUrl('/ogloszenia'); //podaj mu id byku
   }
 
 }

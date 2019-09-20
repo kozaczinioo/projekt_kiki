@@ -1,0 +1,30 @@
+html{
+  display: flex;
+}
+.main{
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/kiki-c7b28.appspot.com/o/201909-komis-2.jpg?alt=media&token=6e7916c0-c978-412e-bb58-73d6eca58d20");
+    height: 45%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: 50%;
+  background-position-y: -4vw;
+ }
+ .content{
+   padding-top: 5%;
+  height: 60%;
+  z-index: 3;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+
+ @media only screen and (max-device-width: 1366px) {
+    .main {
+      background-attachment: scroll;
+      background-size: 100%;
+      width: 100%;
+    }
+  }
+
