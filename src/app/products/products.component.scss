@@ -1,13 +1,14 @@
 .example-car {
-  max-width: 80%;
+  max-width: 75%;
   display: block;
   // margin-left: auto;
   // margin-right: auto;
-  width: 50%;
+  width: 45%;
   margin: 0 auto;
   justify-items: center;
   margin-bottom: 2%;
 }
+
 .example-car:hover{
   opacity: 0.5;
 }
@@ -19,9 +20,21 @@ button{
   text-align: center;
   text-decoration: none;
   display: block;
-  font-size: 16px;
+  width: 55%;
+  height: 8rem;
+  font-size: 4rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2%;
-  background-color: crimson;
+  background-color: burlywood;
 }
+@media only screen and (max-device-width: 1366px) {
+  .example-car{
+    width: 70%;
+  }
+  button{
+    font-size: initial;
+    height: 6rem;
+    margin-top: 5%;
+  }
+  }

@@ -16,17 +16,7 @@ background-position-y: -21vw;
   background-position: center;
   background-size: 105%;
 }
-@media only screen and (max-device-width: 1366px) {
-  .main {
-    background-attachment: scroll;
-  }
-}
-@media only screen and (max-device-width: 1366px) {
-  .mainb {
-    background-attachment: scroll;
-    background-size: contain;
-  }
-}
+
 .content{
   height: 60%;
   width: 70%;
@@ -45,4 +35,24 @@ background-position-y: -21vw;
   text-align: center;
   font-size: 2rem;
   padding-top: 5%;
+  width: 70%;
+  display: flex;
+  margin: 0 auto;
+}
+@media only screen and (max-device-width: 1366px) {
+  .main {
+    background-attachment: scroll;
+  }
+
+  .mainb {
+    background-attachment: scroll;
+    background-size: contain;
+  }
+  .content{
+    display: inherit;
+    overflow: scroll;
+  }
+  .b{
+    overflow: scroll;
+  }
 }
