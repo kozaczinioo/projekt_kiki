@@ -20,10 +20,11 @@ import { AProductsComponent } from './admin/a-products/a-products.component';
 import { ANewproductComponent } from './admin/a-newproduct/a-newproduct.component';
 import { LoginComponent } from './admin/login/login.component';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule } from 'angularfire2';
 import { AuthService } from './auth.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
+import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatRadioModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
 
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
@@ -63,8 +65,8 @@ import {MatRadioModule} from '@angular/material/radio';
       {path: 'onas', component: OnasComponent},
       {path: 'kontakt', component: KontaktComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'nowy',  component: ANewproductComponent, canActivate: [AuthGuardService]},
       {path: 'admin', component: AProductsComponent, canActivate: [AuthGuardService]},
+      {path: 'nowy',  component: ANewproductComponent, canActivate: [AuthGuardService]},
     ]),
   ],
   providers: [AngularFireAuthModule,
