@@ -15,7 +15,7 @@ export class DbserviceService {
     public db: AngularFireDatabase
   ){
 
-     this.items = db.list('/courses').valueChanges();
+     this.items = db.list('/0').valueChanges();
      this.items.subscribe(res => console.log(res));
 
   }

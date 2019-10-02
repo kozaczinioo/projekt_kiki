@@ -1,6 +1,7 @@
 abc
 <ul>
   <li *ngFor="let item of items | async">
-    {{item}}
+    {{item | json}}
   </li>
 </ul>
+<div *ngFor="let item of items | async">{{item}} </div>
