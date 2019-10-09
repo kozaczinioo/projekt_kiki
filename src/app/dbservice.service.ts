@@ -7,28 +7,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DbserviceService {
-  items: Observable<any>;
+  items: AngularFireList<any[]>;
   // itemsRef: AngularFireList<any>;
 
 
   constructor(
-    public db: AngularFireDatabase
-  ){
+   public db: AngularFireDatabase)
+   {
+     this.items = db.list('/');
+     console.log(this.items);
 
-     this.items = db.list('/0').valueChanges();
-     this.items.subscribe(res => console.log(res));
-
-  }
+   }
 
 
 
 getItems() {
-  this.items
-  .subscribe(items =>
-    {
-      console.log(items);
-      return items;
-    })
+    console.log(this.items.valueChanges());
     return this.items;
    }
 }
