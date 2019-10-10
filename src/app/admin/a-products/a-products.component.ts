@@ -1,3 +1,4 @@
+import { Item } from './../../item';
 import { AngularFireDatabase, AngularFireList, AngularFireObject} from 'angularfire2/database';
 import { DbserviceService } from './../../dbservice.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,7 +19,7 @@ export class AProductsComponent {
   itemsRef: AngularFireList<any>;
 
 
-  constructor(DbserviceService: DbserviceService) {
+  constructor(DbserviceService: DbserviceService, public db: AngularFireDatabase) {
     this.itemsRef = DbserviceService.getItems();
     this.items = this.itemsRef.valueChanges();
     //console.log("bez" + this.items); //nie dziala
@@ -26,21 +27,15 @@ export class AProductsComponent {
     //this.items.valueChanges();
   }
 
-  add(course: HTMLInputElement){
-    this.itemsRef.push(course.value);
-  }
-  addCar()
-  {
-    this.itemsRef.push({
-      rodzaj: "auto",
-      marka: "audi",
-      rocznik: 2010,
-      uszkodzony: true,
-    })
-  }
+
   RemoveCar()
   {
     this.itemsRef.remove('3');
   }
 
+  delete(item: Item) {
+    //console.log(item.$key);
+     this.db.object('/' + item.key)
+      .remove();
+  }
 }

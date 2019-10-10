@@ -17,6 +17,19 @@
   height: 90px;
 }
 
+button{
+  display: flex;
+  margin: 0 auto;
+  border:1px solid gray;
+  border-radius:7%;
+  font-size: 1.6rem;
+  word-wrap: break-word;
+  max-width: 50%;
+  min-width: 8%;
+  max-height: 40%;
+  padding: 1%;
+  margin-top: 2%;
+}
 .mat-form-field{
 display: inherit;
 padding-top: 5%;

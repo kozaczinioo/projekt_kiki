@@ -25,6 +25,9 @@ import { AuthService } from './auth.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
+import { FormsModule } from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,9 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/dat
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    FormsModule,
+    MatListModule,
+    MatIconModule,
 
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
@@ -65,8 +71,9 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/dat
       {path: 'onas', component: OnasComponent},
       {path: 'kontakt', component: KontaktComponent},
       {path: 'login', component: LoginComponent},
+      {path: 'nowy',  component: ANewproductComponent},
       {path: 'admin', component: AProductsComponent, canActivate: [AuthGuardService]},
-      {path: 'nowy',  component: ANewproductComponent, canActivate: [AuthGuardService]},
+      //{path: 'nowy',  component: ANewproductComponent, canActivate: [AuthGuardService]},
     ]),
   ],
   providers: [AngularFireAuthModule,

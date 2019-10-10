@@ -3,7 +3,7 @@
   <form class="form">
   <mat-form-field>
   <mat-label>Rodzaj</mat-label>
-   <select matNativeControl required>
+   <select matNativeControl  name="type" [(ngModel)] = "type" required>
     <option value="cięzarowy">ciezarowy</option>
     <option value="osobowy">osobowy</option>
     <option value="kontener">kontener</option>
@@ -12,7 +12,7 @@
   </mat-form-field>
   <mat-form-field>
   <mat-label>Marka</mat-label>
-      <select matNativeControl required>
+      <select matNativeControl placeholder="make" name="make"[(ngModel)]="make" required>
         <option value="volvo">Volvo</option>
         <option value="saab">Saab</option>
         <option value="mercedes">Mercedes</option>
@@ -21,28 +21,28 @@
     </mat-form-field>
     <div class="helper"></div>
     <mat-form-field class="full-width">
-      <input matInput placeholder="Model">
+      <input name="model" matInput  placeholder="Model" [(ngModel)]="model">
+    </mat-form-field>
+    <mat-form-field class="full-width" >
+     <input matInput name="year" [(ngModel)]="year" placeholder="Rocznik">
     </mat-form-field>
     <mat-form-field class="full-width">
-     <input matInput placeholder="Rocznik">
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <input matInput placeholder="przebieg">
+      <input matInput name="mileage" [(ngModel)]="mileage" placeholder="przebieg">
     </mat-form-field>
     <mat-form-field>
         <mat-label>Paliwo</mat-label>
-            <select matNativeControl required>
-              <option value="volvo">Diesel</option>
-              <option value="saab">Benzyna</option>
-              <option value="saab">Benzyna+lpg</option>
-              <option value="saab">Benzyna+lpg</option>
+            <select name="fueltype" [(ngModel)]="fueltype" matNativeControl required>
+              <option value="Diesel">Diesel</option>
+              <option value="Benzyna">Benzyna</option>
+              <option value="Benzyna+lpg">Benzyna+lpg</option>
+              <option value="Benzyna+cng">Benzyna+cng</option>
             </select>
           </mat-form-field>
     <mat-form-field class="full-width">
-      <input matInput placeholder="kolor">
+      <input matInput name="color" [(ngModel)]="color" placeholder="kolor">
     </mat-form-field>
 
-    <mat-radio-group>
+    <mat-radio-group name="broaken" [(ngModel)]="broaken">
         <label id="uszkodzony">uszkodzony </label>
         <br><br>
         <mat-radio-button value="tak">tak</mat-radio-button>
@@ -50,7 +50,11 @@
       </mat-radio-group>
 
     <mat-form-field class="full-width">
-        <textarea matInput placeholder="opis"></textarea>
+        <textarea matInput name="describtion" [(ngModel)]="describtion" placeholder="opis"></textarea>
       </mat-form-field>
   </form>
 </div>
+<button (click)="cancel()">Anuluj</button>
+<button (click)="addCar()">Dodaj</button>
+
+
