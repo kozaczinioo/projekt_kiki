@@ -28,6 +28,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/dat
 import { FormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import {MatIconModule} from '@angular/material/icon';
     AProductsComponent,
     ANewproductComponent,
     LoginComponent,
-
+    ProductCardComponent,
 
   ],
   imports: [
@@ -71,6 +72,7 @@ import {MatIconModule} from '@angular/material/icon';
       {path: 'onas', component: OnasComponent},
       {path: 'kontakt', component: KontaktComponent},
       {path: 'login', component: LoginComponent},
+      {path: 'product/:id', component: ProductCardComponent},
       {path: 'nowy',  component: ANewproductComponent},
       {path: 'admin', component: AProductsComponent, canActivate: [AuthGuardService]},
       //{path: 'nowy',  component: ANewproductComponent, canActivate: [AuthGuardService]},

@@ -21,9 +21,10 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit() {
   }
-  goto() {
+  goto(id: number) {
     console.log("click");
-    this.router.navigateByUrl('/ogloszenia'); //podaj mu id byku
+    //this.router.navigateByUrl('/ogloszenia'); //podaj mu id byku
+    this.router.navigate(['/ogloszenia', id]);
   }
 
 }
