@@ -1,0 +1,9 @@
+<div class="empty"></div>
+<mat-list *ngFor="let item of items | async">
+    <mat-list-item class="car" [routerLink]="['/product', item.key]" >
+      <img matListAvatar mat-card-image src="https://images.netdirector.co.uk/gforces-auto/image/upload/w_256,h_256,q_auto,c_fill,f_auto,fl_lossy/auto-client/7983b07d9f2a93d80f7142de5c5a8dba/toyota_rav4_2019_gallery_08_full_tcm_3060_1478689.jpg">
+      <h1 mat-line>{{item.make | uppercase}} | {{item.model | uppercase}} </h1>
+      <p mat-line> {{item.year}} | {{item.color}} | {{item.mileage| number}}km | {{item.fueltype}}</p>
+      <h2>190 000 <span>PLN</span></h2>
+    </mat-list-item>
+  </mat-list>
