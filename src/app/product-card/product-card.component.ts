@@ -1,6 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage } from 'ngx-gallery';
+import { AngularFireDatabase, AngularFireList, AngularFireObject} from 'angularfire2/database';
+import { DbserviceService } from './../dbservice.service';
+import { Observable } from 'rxjs';
+import { debug } from 'util';
 
 @Component({
   selector: 'product-card',
@@ -8,26 +12,43 @@ import { NgxGalleryOptions, NgxGalleryImage } from 'ngx-gallery';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit, OnDestroy {
-  opis = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus ligula porttitor congue egestas. Aenean fringilla et arcu eu rhoncus. In aliquet risus turpis, vel ullamcorper magna venenatis in. Nullam nibh ipsum, maximus quis ultrices ut, scelerisque eu elit. Aliquam sit amet sapien at dui varius tincidunt.";
+  // tslint:disable-next-line: max-line-length
+  opis = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus ligula porttitor congue egestas. Aenean fringilla et arcu eu rhoncus. In aliquet risus turpis, vel ullamcorper magna venenatis in. Nullam nibh ipsum, maximus quis ultrices ut, scelerisque eu elit. Aliquam sit amet sapien at dui varius tincidunt.';
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
   activatedRoute: any;
 
+  items: Observable<any[]>;
+  itemsRef: AngularFireList<any>;
+  singleitem;
+
   id: number;
   private sub: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute,DbserviceService: DbserviceService, public db: AngularFireDatabase) {
+    this.itemsRef = DbserviceService.getItems();
+    this.items = this.itemsRef.valueChanges();
+
+  }
+
+
+
+
+  goMain(){
+    console.log("nie ma takiego id");
+    this.router.navigateByUrl('');
+  }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-       this.id = +params['id']; // (+) converts string 'id' to a number
+       this.id = params.id; // (+) converts string 'id' to a number
 
        // In a real app: dispatch action to load the details here.
        console.log(this.id);
-
+      });
       //
 
-       this.galleryOptions = [
+    this.galleryOptions = [
         {
          // width: '600px',
           // height: '400px',
@@ -37,7 +58,7 @@ export class ProductCardComponent implements OnInit, OnDestroy {
         }
       ];
 
-       this.galleryImages = [
+    this.galleryImages = [
         {
           small: 'https://imgd.aeplcdn.com/642x361/cw/ec/40842/Vision-M-Next-Concept-161133.jpg?wm=1&q=85',
           medium: 'https://imgd.aeplcdn.com/642x361/cw/ec/40842/Vision-M-Next-Concept-161133.jpg?wm=1&q=85',
@@ -65,7 +86,7 @@ export class ProductCardComponent implements OnInit, OnDestroy {
         }
       ];
       //
-    });
+
   }
 
   ngOnDestroy() {

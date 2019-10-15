@@ -1,18 +1,21 @@
+<div class="main" *ngFor="let item of items | async">
+  <!-- <div class="single" *ngIf="item.key == id; else goMain()"> -->
+      <div class="single" *ngIf="item.key == id">
 <div class="empty"></div>
 <div class="photos">
   <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
 </div>
 <div class="params">
   <div class="atributes_list">
-    <div class="atr_brand">a</div>
-    <div class="atr_model">b</div>
-    <div class="atr_year">c</div>
-    <div class="atr_mileage">d</div>
-    <div class="atr_engine_power">e</div>
+    <div class="atr_brand">{{item.make}}</div>
+    <div class="atr_model">{{item.model}}</div>
+    <div class="atr_year">{{item.year}}</div>
+    <div class="atr_mileage">{{item.mileage}}</div>
+    <div class="atr_engine_power">engine</div>
     <div class="atr_gearbox">f</div>
     <div class="atr_pochodzenie">g</div>
-    <div class="atr_body_type">h</div>
-    <div class="atr_color">i</div>
+    <div class="atr_body_type">{{item.type}}</div>
+    <div class="atr_color">{{item.color}}</div>
     <div class="atr_doors_count">j</div>
     <div class="cos_jeszcze">h</div>
   </div>
@@ -20,6 +23,8 @@
 </div>
 <div class="description">
   <span>Opis</span>
-  <p>{{opis}}</p>
+  <p>{{item.describtion}}</p>
+</div>
+</div>
 </div>
 
