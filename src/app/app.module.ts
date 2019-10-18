@@ -29,6 +29,8 @@ import { FormsModule } from '@angular/forms';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { FileDropComponent } from './file-drop/file-drop.component';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     ANewproductComponent,
     LoginComponent,
     ProductCardComponent,
+    FileDropComponent,
 
   ],
   imports: [
@@ -65,6 +68,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     FormsModule,
     MatListModule,
     MatIconModule,
+    NgxFileDropModule,
 
     RouterModule.forRoot([
       {path: '', component: HomeComponent},

@@ -3,7 +3,7 @@ import { Item } from './../../item';
 import { DbserviceService } from './../../dbservice.service';
 import { Router } from '@angular/router';
 import { Component, OnInit, Injectable } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators, NumberValueAccessor } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -28,6 +28,9 @@ export class ANewproductComponent {
   fueltype: string;
   broaken: boolean;
   describtion: string;
+  price: number;
+  engine: number;
+  url: string[] = [];
 
   items: Observable<any[]>;
   itemsRef: AngularFireList<any>;
@@ -56,6 +59,10 @@ export class ANewproductComponent {
     item.fueltype = this.fueltype;
     item.broaken = this.broaken;
     item.describtion = this.describtion;
+    item.engine = this.engine;
+    item.price = this.price;
+    item.url = this.url;
+    item.fav = false;
 
     //item.key = this.key;
 

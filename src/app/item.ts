@@ -10,5 +10,8 @@ export class Item {
   fueltype: string;
   broaken: boolean;
   describtion: string;
-
+  price: number;
+  engine: number;
+  url: string[] = [];
+  fav: boolean;
 }

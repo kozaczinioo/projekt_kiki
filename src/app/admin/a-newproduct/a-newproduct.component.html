@@ -17,6 +17,7 @@
         <option value="saab">Saab</option>
         <option value="mercedes">Mercedes</option>
         <option value="audi">Audi</option>
+        <option value="audi">Nissan</option>
       </select>
     </mat-form-field>
     <div class="helper"></div>
@@ -41,6 +42,9 @@
     <mat-form-field class="full-width">
       <input matInput name="color" [(ngModel)]="color" placeholder="kolor">
     </mat-form-field>
+    <mat-form-field class="full-width">
+        <input matInput name="engine" [(ngModel)]="engine" placeholder="pojemnosc silnika">
+      </mat-form-field>
 
     <mat-radio-group name="broaken" [(ngModel)]="broaken">
         <label id="uszkodzony">uszkodzony </label>
@@ -48,12 +52,19 @@
         <mat-radio-button value="tak">tak</mat-radio-button>
         <mat-radio-button value="nie">nie</mat-radio-button>
       </mat-radio-group>
+      <mat-form-field class="full-width">
+          <input matInput name="price" [(ngModel)]="price" placeholder="cena">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <input matInput name="url" [(ngModel)]="url" placeholder="zdj">
+          </mat-form-field>
 
     <mat-form-field class="full-width">
         <textarea matInput name="describtion" [(ngModel)]="describtion" placeholder="opis"></textarea>
       </mat-form-field>
   </form>
 </div>
+<file-drop></file-drop>
 <button (click)="cancel()">Anuluj</button>
 <button (click)="addCar()">Dodaj</button>
 
