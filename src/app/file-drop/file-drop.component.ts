@@ -1,6 +1,8 @@
+import { ANewproductComponent } from './../admin/a-newproduct/a-newproduct.component';
 import { Component, OnInit } from '@angular/core';
 import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import * as firebase from 'firebase';
+
 
 @Component({
   selector: 'file-drop',
@@ -11,6 +13,9 @@ export class FileDropComponent {
 
   public files: NgxFileDropEntry[] = [];
   public urlArray: string[] = [];
+
+  constructor(public anew: ANewproductComponent)
+  {}
 
   public dropped(files: NgxFileDropEntry[]) {
     this.files = files;
@@ -28,6 +33,7 @@ export class FileDropComponent {
               //console.log(downloadURL);
               snapshot.ref.getDownloadURL();
               this.urlArray.push(downloadURL);
+              this.anew.changeMessage(downloadURL);
               //console.log(this.urlArray);
             });
           });
@@ -35,12 +41,14 @@ export class FileDropComponent {
       } else {
         // It was a directory (empty directories are added, otherwise only files)
         const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
-        console.log(droppedFile.relativePath, fileEntry);
+        //console.log(droppedFile.relativePath, fileEntry);
       }
     }
   }
 
-  public returnUrlArray(){
+
+
+  public returnUrlArray() {
     console.log("oddaje");
     console.log(this.urlArray);
   }

@@ -3,7 +3,8 @@
       <div class="single" *ngIf="item.key == id">
 <div class="empty"></div>
 <div class="photos">
-  <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+  <ngx-gallery [options]="galleryOptions" [images]="galleryImages">
+  </ngx-gallery>
 </div>
 <div class="params">
   <div class="atributes_list">
@@ -11,7 +12,7 @@
     <div class="atr_model">{{item.model}}</div>
     <div class="atr_year">{{item.year}}</div>
     <div class="atr_mileage">{{item.mileage}}</div>
-    <div class="atr_engine_power">engine</div>
+    <div class="atr_engine_power">{{item.engine}} cm3</div>
     <div class="atr_gearbox">f</div>
     <div class="atr_pochodzenie">g</div>
     <div class="atr_body_type">{{item.type}}</div>

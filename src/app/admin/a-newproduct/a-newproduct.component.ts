@@ -1,3 +1,4 @@
+import { FileDropComponent } from './../../file-drop/file-drop.component';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Item } from './../../item';
 import { DbserviceService } from './../../dbservice.service';
@@ -10,6 +11,7 @@ import { Observable } from 'rxjs';
 import { AngularFireList } from 'angularfire2/database';
 import { debug } from 'util';
 import { FirebaseDatabase } from 'angularfire2';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Component({
   selector: 'app-a-newproduct',
@@ -17,7 +19,7 @@ import { FirebaseDatabase } from 'angularfire2';
   styleUrls: ['./a-newproduct.component.scss']
 })
 
-export class ANewproductComponent {
+export class ANewproductComponent implements OnInit{
   key: string;
   type: string;
   make: string;
@@ -35,10 +37,28 @@ export class ANewproductComponent {
   items: Observable<any[]>;
   itemsRef: AngularFireList<any>;
 
+  message: string;
+  private messageSource = new BehaviorSubject<string>("");
+  currentMessage = this.messageSource.asObservable();
+
 
   constructor(private router: Router, dbserviceService: DbserviceService, public db: AngularFireDatabase) {
     this.itemsRef = dbserviceService.getItems();
     this.items = this.itemsRef.valueChanges();
+  }
+
+  ngOnInit(){
+    this.currentMessage.subscribe(message => {
+      console.log("got it");
+      this.message = message;
+      this.url.push(message);
+      console.log(this.message);
+      console.log(this.url);
+      if(this.url[0] === "")
+      {
+        this.url.shift();
+      }
+    } );
   }
 
   cancel()
@@ -72,6 +92,11 @@ export class ANewproductComponent {
     this.db.object('/' + newPostKey)
     .update({ key: newPostKey, });
 
+  }
+  public changeMessage(message: string) {
+    this.messageSource.next(message);
+    console.log(this.messageSource.getValue());
+    console.log("sending");
   }
   update()
   {

@@ -84,6 +84,7 @@ import { NgxFileDropModule } from 'ngx-file-drop';
   ],
   providers: [AngularFireAuthModule,
               AuthService,
+              FileDropComponent,
               AuthGuardService],
   bootstrap: [AppComponent]
 })
